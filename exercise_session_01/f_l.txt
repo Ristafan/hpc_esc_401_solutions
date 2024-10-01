@@ -1,0 +1,6 @@
+In the first line he created the editor
+In the second line he created the cursor
+In the third line he created the save function
+In the fourth line he wrote a poem
+And finally, in the fifth line he save his poem and could finally rest or something
+~ Beginning of some holy script
