@@ -589,4 +589,21 @@ For redirection to the log and error file I inserted the following two lines int
 #SBATCH --output="mpi_output.log"
 #SBATCH --error="mpi_error.log"
 ```
+I encountered some problems, or rather the people at cscs had to fix some problems becuase it seems the nodes were all reserved for maintenance (maybe I also got something wrong).
+```bash
+[eiger][mfaehnri@eiger-ln001 mfaehnri]$ sbatch mpi_cpi_job.sh
+Submitted batch job 3370987
+[eiger][mfaehnri@eiger-ln001 mfaehnri]$ sbatch omp_cpi_job.sh
+Submitted batch job 3370988
+[eiger][mfaehnri@eiger-ln001 mfaehnri]$ squeue -u mfaehnri
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           3370977     debug   my_job mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
+           3370984     debug   my_job mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
+           3370985     debug   my_job mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
+           3370987     debug mpi_cpi_ mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
+           3370988     debug omp_cpi_ mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
+```
 
+## Remarks
+Sadly I can't do much more right now, because I have to work and I took a weekend off to go to Copenhagen, since I won't have any other opportunity this year to make some holidays (I had to work all summer).
+That's why this is as far as I got.. I hope I'll have more time for the next exercise.
