@@ -1,6 +1,9 @@
 # Exercise Session 02 #
 In this session, you will compile and run your first programs on Eiger. This directory contains two versions of the code that were parallelized using MPI or OpenMP.
 
+## Remarks
+Sadly I wasn't able to complete everything because I have to work (part-time) and I took a weekend off to go to Copenhagen. Also cscs seemed to have some problems so I wasn't able to run all my jobs. I hope I'll have more time for the next exercise.
+
 ## Exercise 2
 When running 
 ```bash
@@ -604,6 +607,39 @@ Submitted batch job 3370988
            3370988     debug omp_cpi_ mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
 ```
 
-## Remarks
-Sadly I can't do much more right now, because I have to work and I took a weekend off to go to Copenhagen, since I won't have any other opportunity this year to make some holidays (I had to work all summer).
-That's why this is as far as I got.. I hope I'll have more time for the next exercise.
+To run the following:
+`JOBID USER PRIORITY ACCOUNT NAME NODES ST REASON START_TIME TIME_LEFT PRIORITY`
+I would have to run:
+```bash
+squeue --format="%.18i %.10u %.8P %.10a %.15j %.6D %.2t %.15R %.20S %.10L %.10Q"
+```
+```
+With: 
+%.18i: Job ID
+%.10u: User
+%.8P: Priority
+%.10a: Account
+%.15j: Job name
+%.6D: Number of nodes
+%.2t: State
+%.15R: Reason
+%.20S: Start time
+%.10L: Time left
+%.10Q: Priority
+```
+
+## Exercise 4
+At this point it was a little hard to make any observations since I can't run the jobs due to the ongoing maintenance..
+But this is what I would have done:
+run with 1 thread:
+```bash
+export OMP_NUM_THREADS=1
+```
+run with 10 threads:
+```bash
+export OMP_NUM_THREADS=10
+```
+
+I can only guess what the differences would be by expecting results from the theory.. Probably the observations would be that
+- Increasing threads to 10 would result in faster execution
+- Changing optimization flag would probably cause slower execution
