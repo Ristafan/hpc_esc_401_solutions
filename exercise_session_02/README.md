@@ -568,3 +568,25 @@ must specify the version if there is more than one version:
 --------------------------------------------------------------------------------------------------------------------------------------
 ```
 </details>
+
+## Exercise 3
+I didn't quite understand what you meant by "use `hostname` as the program" but I added the following line:
+```bash
+#SBATCH --account="uzh8"
+```
+and I checked if the job was running with the following result:
+```bash
+[eiger][mfaehnri@eiger-ln001 exercise_session_02]$ sbatch $SCRATCH/hostname.sh
+Submitted batch job 3370985
+[eiger][mfaehnri@eiger-ln001 exercise_session_02]$ squeue -u mfaehnri
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           3370977     debug   my_job mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
+           3370984     debug   my_job mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
+           3370985     debug   my_job mfaehnri PD       0:00      1 (ReqNodeNotAvail, Reserved for maintenance)
+```
+For redirection to the log and error file I inserted the following two lines into the .sh file:
+```bash
+#SBATCH --output="mpi_output.log"
+#SBATCH --error="mpi_error.log"
+```
+
