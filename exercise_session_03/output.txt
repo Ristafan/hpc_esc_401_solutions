@@ -1,0 +1,18 @@
+Process rank: 0
+pi is approximately 3.1415926555897684, Error is 0.0000000019999753
+Computed in 0.3724 seconds
+Total execution time (before and after MPI_Init and MPI_Finalize): 0.3786 seconds
+Process rank: 1
+Process rank: 2
+Process rank: 3
+Process rank: 0
+pi is approximately 3.1415926555898275, Error is 0.0000000020000344
+Computed in 0.1871 seconds
+Total execution time (before and after MPI_Init and MPI_Finalize): 0.1973 seconds
+Process rank: 2
+Process rank: 3
+Process rank: 4
+Process rank: 5
+Process rank: 6
+Process rank: 1
+Process rank: 7
