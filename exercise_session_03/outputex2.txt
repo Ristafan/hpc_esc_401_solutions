@@ -1,0 +1,18 @@
+sum=10022429073.341873
+Computed in 4.931 seconds
+sum=10022429072.974625
+Computed in 2.483 seconds
+sum=10022429071.947245
+Computed in 1.238 seconds
+sum=10022429072.466204
+Computed in 0.6221 seconds
+sum=10022429072.218266
+Computed in 0.3139 seconds
+sum=10022429072.150675
+Computed in 0.1607 seconds
+sum=10022429072.122816
+Computed in 0.08812 seconds
+sum=10022429072.084940
+Computed in 0.0718 seconds
+sum=10022429072.089407
+Computed in 0.07956 seconds

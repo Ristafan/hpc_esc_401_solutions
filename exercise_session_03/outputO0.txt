@@ -1,0 +1,2 @@
+sum=10022429073.341873
+Computed in 4.973 seconds
