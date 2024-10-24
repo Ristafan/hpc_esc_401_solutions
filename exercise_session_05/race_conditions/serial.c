@@ -1,7 +1,7 @@
 #include <stdio.h>
-
 #include <stdlib.h>
 #include <string.h>
+#include <omp.h>
 
 #define MAX_LINE_LENGTH 80
 
@@ -40,11 +40,6 @@ int read_file(char *path,int *buff,int *size){
     return 0;
 }
 
-
-
-
-
-
 int main(int argc, char *argv[]){
 
 	int num_size, true_n0=646016;
@@ -54,18 +49,17 @@ int main(int argc, char *argv[]){
 	printf("Size of integer array/file: %d\n",num_size);
 
     // first loop
-    #pragma omp parallel for
     int maxval = 0;
+    #pragma omp parallel for reduction(max:maxval)
     for (int i=0;i<num_size;i++) if (numbers[i] > maxval) maxval = numbers[i];
-    printf("max number in file: %d\n",maxval);	
+    printf("max number in file: %d\n",maxval);
 
     // second loop
-    #pragma omp parallel for
     int num_n0 = 0;
+    #pragma omp parallel for reduction(+:num_n0)
     for (int i=0;i<num_size;i++) if (numbers[i] == 0) num_n0++;
-    printf("number of 0s in file: %d\n",num_n0);  
-    printf("true number of 0s in file: %d\n",true_n0);  
-
+    printf("number of 0s in file: %d\n",num_n0);
+    printf("true number of 0s in file: %d\n",true_n0);
 
     return 0;
 }

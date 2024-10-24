@@ -1,5 +1,6 @@
 #include "jacobi.h"
 #include <math.h>
+#include <omp.h>
 
 /**
  * @brief      Computes norm of the difference between two matrices
