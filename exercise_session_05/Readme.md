@@ -14,6 +14,8 @@
 For this exercise I wrote a small python script that compares the outputs and it returned as expected ```True``` which means the outputs are the same.
 
 # Ex 3
+As seen in the following outputs, the result remained the same using different number of threads.
+
 ### Num threads = 1
 Size of integer array/file: 1000000
 max number in file: 38747
@@ -37,3 +39,7 @@ Size of integer array/file: 1000000
 max number in file: 38747
 number of 0s in file: 646016
 true number of 0s in file: 646016
+
+## 
+The second loop does have a race conditions, which means we cannot just insert the usual #pragma omp parallel for.
+This means we have to modify this clause to make it work as we intend it to work. Thats why I created a new file and added #pragma omp atomic to update the 0 count.
