@@ -22,20 +22,15 @@ int main(int argc, char** argv) {
     left_rank = (my_rank - 1 + size) % size;
 
     for (int i=0; i<size; i++) {
-        if (my_rank % 2 == 0){
-            MPI_Ssend(&send_rank, 1, MPI_INT, right_rank, 0, MPI_COMM_WORLD);
-            MPI_Recv(&recv_rank, 1, MPI_INT, left_rank, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        MPI_Request requests[2];
+        MPI_Status statuses[2];
+        
+        MPI_Irecv(&recv_rank, 1, MPI_INT, left_rank, 0, MPI_COMM_WORLD, &requests[1]);
+        MPI_Isend(&send_rank, 1, MPI_INT, right_rank, 0, MPI_COMM_WORLD, &requests[0]);
+        MPI_Waitall(2, requests, statuses);
 
-            send_rank = recv_rank;
-            my_sum += recv_rank;
-
-        } else {
-            MPI_Recv(&recv_rank, 1, MPI_INT, left_rank, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-            MPI_Ssend(&send_rank, 1, MPI_INT, right_rank, 0, MPI_COMM_WORLD);
-            
-            send_rank = recv_rank;
-            my_sum += recv_rank;
-        }    
+        send_rank = recv_rank;
+        my_sum += recv_rank;
     }
     // Loop over the number of processes
     //     send to right, receive from left
