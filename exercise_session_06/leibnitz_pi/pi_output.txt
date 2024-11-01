@@ -1,0 +1,12 @@
+I am processor 0 out of 12, and the value of pi is 3.141593
+I am processor 2 out of 12, and the value of pi is -0.000000
+I am processor 4 out of 12, and the value of pi is 3.141593
+I am processor 7 out of 12, and the value of pi is 0.000000
+I am processor 8 out of 12, and the value of pi is 0.000000
+I am processor 10 out of 12, and the value of pi is -0.000000
+I am processor 1 out of 12, and the value of pi is 3.141593
+I am processor 3 out of 12, and the value of pi is 0.000000
+I am processor 5 out of 12, and the value of pi is 3.141593
+I am processor 6 out of 12, and the value of pi is -0.000000
+I am processor 9 out of 12, and the value of pi is 0.000000
+I am processor 11 out of 12, and the value of pi is 0.000000
