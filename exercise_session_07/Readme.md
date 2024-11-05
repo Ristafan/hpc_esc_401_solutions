@@ -1,7 +1,7 @@
 # Exercise 1
-- a) a pointer to an integer (int[10])
+- a) a pointer to the first element of an array of integers (int*)
 - b) an integer (first element in the array) 
-- c) a pointer to an array of integers
+- c) pointer to a pointer to an integer
 - d) 10
 - e) 10
 - f) 40
@@ -14,12 +14,17 @@
 
 
 # Exercise 2
-- a) M is a pointer to a pointer to an integer
-- b) As already stated M is a pointer to a pointer to an integer (meaning the address of it), *M is a pointer to an integer (again meaning the address of it) and **M is the address of the integer pointer that points to an array (M[0])
-- c) M[1][3] is 8, *(M[0]+1) is 5 and *(*(M+1)+3) is 8 as well
-- d) No it is not true, since memory usually isn't allocated next to each other.
-- e) Code in file `swap_array.cpp`
-
+```
+a) M is a pointer to a pointer to an integer
+b) M is a pointer to an integer (**int)
+  *M is a pointer to an integer, pointing to the first array (int*) which is which points to M[0]
+  **M is the integer value at the start of the first array (M[0][0]) 
+c) M[1][3] is 8
+  *(M[0]+1) is 1 (M[0][1])
+  *(*(M+1)+3) is 8 as well (M[1][3])
+d) No it is not true, since memory usually isn't allocated next to each other.
+e) Code in file `swap_array.cpp`
+```
 
 # Exercise 3
 
