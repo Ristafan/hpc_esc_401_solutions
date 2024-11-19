@@ -15,13 +15,9 @@ void axpy(int n, double alpha, const double *x, double* y) {
 // OpenACC implementation of axpy kernel
 void axpy_gpu(int n, double alpha, const double *x, double* y) {
 
-    int i;
-
-    // TODO: offload this loop to the GPU
-    #pragma acc kernels {
-    for(i = 0; i < n; ++i) {
-        y[i] += alpha*x[i];
-    }
+#pragma acc parallel loop
+    for(int i = 0; i < n; ++i) {
+    	y[i] += alpha*x[i];
     }
 }
 
@@ -53,8 +49,6 @@ void print_versions(void) {
 #endif
 
 // MPI_Get_version()
-
-
 }
 
 int main(int argc, char** argv)
@@ -105,3 +99,4 @@ int main(int argc, char** argv)
     free(y);
     return 0;
 }
+
