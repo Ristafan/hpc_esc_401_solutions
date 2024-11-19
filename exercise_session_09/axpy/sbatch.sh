@@ -15,5 +15,5 @@
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export CRAY_CUDA_MPS=1
 
-srun -n 1 ./axpy.openacc 32 >> output.txt
+srun -n 1 ./axpy.openacc 30 >> axpy.out
 
