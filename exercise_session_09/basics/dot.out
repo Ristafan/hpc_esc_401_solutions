@@ -1,0 +1,16 @@
+dot product OpenACC of length n = 1024 : 0.0078125MB
+expected 9286 got 9286: success
+Host kernel took 0 s
+GPU kernel took 0.0184679 s
+dot product OpenACC of length n = 16 : 0.00012207MB
+expected 148 got 148: success
+Host kernel took 0 s
+GPU kernel took 0.0186961 s
+dot product OpenACC of length n = 256 : 0.00195312MB
+expected 2408 got 2408: success
+Host kernel took 9.53674e-07 s
+GPU kernel took 0.018707 s
+dot product OpenACC of length n = 65536 : 0.5MB
+expected 588374 got 588374: success
+Host kernel took 6.48499e-05 s
+GPU kernel took 0.018688 s
