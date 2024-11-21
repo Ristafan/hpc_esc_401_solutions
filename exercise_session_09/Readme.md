@@ -12,4 +12,9 @@
 - For smaller test sizes, the GPU execution time improves from ~0.006s–0.6s (naive) to ~0.003s–0.03s.
 - For larger test sizes, the GPU execution time improves from ~13s (naive) to ~3.2s, which is around a 4x speedup.
 
-# Exercise 3
+## Exercise 3
+- Multiple threads may simultaneously update the shared variable sum, leading to incorrect results if access is not managed properly.
+- The keyword `reduction` ensures each thread computes its partial sum independently and combines them safely at the end.
+-
+- For small problem sizes is the GPU code slower due to kernel launch overhead.
+- For larger sizes does the GPU still take ~0.0187s, whereas the CPU does take ~0.000065s, showing that the GPU is slower.
