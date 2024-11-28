@@ -1,0 +1,15 @@
+Convolution took  0.000100 sec. on GPU
+Convolution took  0.008997 sec. on CPU
+PASSED
+Convolution took  0.000137 sec. on GPU
+Block size: 32, GPU time: 0.002482 sec.
+Convolution took  0.000130 sec. on GPU
+Block size: 64, GPU time: 0.000787 sec.
+Convolution took  0.000127 sec. on GPU
+Block size: 128, GPU time: 0.000781 sec.
+Convolution took  0.000132 sec. on GPU
+Block size: 256, GPU time: 0.000792 sec.
+Convolution took  0.000133 sec. on GPU
+Block size: 512, GPU time: 0.000789 sec.
+Convolution took  0.008878 sec. on CPU
+PASSED

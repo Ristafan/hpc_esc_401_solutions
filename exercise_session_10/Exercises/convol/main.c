@@ -7,7 +7,7 @@
 
 #define N 1000 		/* Size of square matrix */
 
-void gpu_convol (float *, float *, int);
+void gpu_convol (float *, float *, int, int);
 
 /* (over-)Simple chronometer function */
 void chrono (int kind, float *time) {
@@ -62,7 +62,12 @@ int main () {
   b = malloc (n*n*sizeof(float));
   c = malloc (n*n*sizeof(float));
   init (a, n);
-  gpu_convol (a, c, n);
+  for (int blockSize = 32; blockSize <= 512; blockSize *= 2) {
+    chrono(START, &time);
+    gpu_convol(a, c, n, blockSize);
+    chrono(STOP, &time);
+    printf("Block size: %d, GPU time: %f sec.\n", blockSize, time);
+}
   chrono (START, &time);
   cpu_convol (a, b, n);
   chrono (STOP, &time);
