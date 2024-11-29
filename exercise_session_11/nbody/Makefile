@@ -1,7 +1,7 @@
 # module load cray
 
 nbody	: nbody.cpp Makefile
-	CC -fopt-info-vec -O3 -march=native -ffast-math -g -o nbody nbody.cpp
+	CC -O3 -march=native -ffast-math -g -o nbody nbody.cpp
 
 nbody1	: nbody1.cpp Makefile
 	CC -fopt-info-vec -O3 -march=native -ffast-math -g -o nbody1 nbody1.cpp
