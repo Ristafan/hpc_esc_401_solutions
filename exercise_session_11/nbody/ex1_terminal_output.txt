@@ -1,0 +1,4 @@
+[eiger][mfaehnri@eiger-ln002 nbody]$ make
+CC -O3 -march=native -ffast-math -g -o nbody nbody.cpp
+WARNING: PerfTools is saving object files from a temporary directory into directory '/users/mfaehnri/.craypat/nbody/5106'
+INFO: creating the PerfTools-instrumented executable 'nbody' (lite-samples) ...OK

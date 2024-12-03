@@ -1,0 +1,9 @@
+sqrt:
+real    0m0.010s
+user    0m0.000s
+sys     0m0.004s
+-----------------
+sqrtf:
+real    0m0.007s
+user    0m0.003s
+sys     0m0.001s
