@@ -1,0 +1,4 @@
+root@martin:~# chmod 600 ~/mafaeh_key
+root@martin:~# eval `ssh-agent`
+Agent pid 3365
+root@martin:~# ssh-add ~/mafaeh_key
