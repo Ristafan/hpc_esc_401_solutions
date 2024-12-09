@@ -107,3 +107,11 @@ Due to errors during installation of the python packages, I ran the following cm
 ```bash
 sudo apt install -q python3-pip --fix-missing
 ```
+
+## Exercise 2
+Pull from Docker Hub
+```
+docker image pull ristafan/poisson
+docker un ristafan/poisson
+```
+
