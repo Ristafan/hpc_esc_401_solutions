@@ -40,6 +40,29 @@ Starting nodemanagers
 ```
 
 ## Exercise 2
+- Launched map tasks=7
+- Launched reduce tasks=1
+- Map input records=35371
+-----------------------------
+- Output directory: output
+- Files created:
+  - _SUCCESS
+  - part-00000
+- some results:
+```
+0       10
+00      1
+000     6
+000he   1
+```
+-----------------------------
+```
+http://localhost:9870/explorer.html#/user/ubuntu/output
+```
+![image](https://github.com/user-attachments/assets/a2a37c1d-15d9-4cfd-8356-ec1cf5317bc1)
+
+-----------------------------
+
 ```bash
 ubuntu@mafaeh-haduppi:~/hpc_esc_401_solutions/exercise_session_13$ wc trump_tweets_0?.csv
     4999    96713  1577185 trump_tweets_01.csv
@@ -153,4 +176,15 @@ packageJobJar: [/tmp/hadoop-unjar2117941988338720188/] [] /tmp/streamjob55605143
         File Output Format Counters
                 Bytes Written=642476
 2024-12-18 17:53:04,683 INFO streaming.StreamJob: Output directory: output
+```
+![image](https://github.com/user-attachments/assets/7d64b735-1184-4ec1-834e-206eec79efd8)
+```bash
+ubuntu@mafaeh-haduppi:~/hpc_esc_401_solutions/exercise_session_13$ hadoop fs -ls output/
+Found 2 items
+-rw-r--r--   1 ubuntu supergroup          0 2024-12-18 17:53 output/_SUCCESS
+-rw-r--r--   1 ubuntu supergroup     642476 2024-12-18 17:53 output/part-00000
+```
+![image](https://github.com/user-attachments/assets/86c6ead2-1f6b-4902-8a28-967935d9375e)
+```bash
+ubuntu@mafaeh-haduppi:~/hpc_esc_401_solutions/exercise_session_13$ hadoop fs -get output/part-00000 part-00000
 ```
